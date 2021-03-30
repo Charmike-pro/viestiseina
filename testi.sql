@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30.03.2021 klo 08:05
+-- Generation Time: 30.03.2021 klo 08:47
 -- Palvelimen versio: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -28,17 +28,32 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `rad` (
+  `id` int(11) NOT NULL,
   `sender` varchar(255) NOT NULL,
-  `msg` varchar(255) NOT NULL
+  `msg` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `hide` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Vedos taulusta `rad`
+-- Indexes for dumped tables
 --
 
-INSERT INTO `rad` (`sender`, `msg`) VALUES
-('John', 'Doe'),
-('dada', 'dada');
+--
+-- Indexes for table `rad`
+--
+ALTER TABLE `rad`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `rad`
+--
+ALTER TABLE `rad`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
