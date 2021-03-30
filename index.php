@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <form action="">
+    <form action="connection.php">
     <label for="sender">Nimesi:</label>
   <input type="text" id="sender" name="sender"><br><br>
   <label for="msg">Viestisi:</label>
