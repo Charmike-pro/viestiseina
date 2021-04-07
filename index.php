@@ -15,4 +15,30 @@
   <input type="submit" value="Lähetä!">
     </form>
 </body>
+<table>
+<tr>
+<br>
+<th>Lähettäjä:</th>
+<th>Viesti:</th>
+</tr>
+<?php
+$conn = mysqli_connect("localhost", "root", "", "testi");
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+/// Displays all database input if "hide" is set to 0. All messages are set to 0 as default
+$sql = "SELECT * FROM rad WHERE hide = 0";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+// output data of each row
+while($row = $result->fetch_assoc()) {
+echo "<tr><td>" . $row["sender"] . "</td><td>"
+. $row["msg"]. "</td></tr>";
+}
+echo "</table> <br>";
+}
+$conn->close();
+?>
+</table>
 </html>

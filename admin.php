@@ -7,7 +7,32 @@
 </head>
 <body>
 <a href="logout.php">Kirjaudu ulos</a>
-<h2>moi</h2>
+<table>
+<tr>
+<th>ID:</th>
+<th>Lähettäjä:</th>
+<th>Viesti:</th>
+<th>Piilotettu:</th>
+</tr>
+<?php
+$conn = mysqli_connect("localhost", "root", "", "testi");
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+/// Displays all database input
+$sql = "SELECT * FROM rad";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+// output data of each row
+while($row = $result->fetch_assoc()) {
+echo "<tr><td>". $row["id"]."</td><td>".$row["sender"]. "</td><td>". $row["msg"]."</td><td>".$row["hide"] ."</td></tr>";
+}
+echo "</table> <br>";
+}
+$conn->close();
+?>
+</table>
 
 </body>
 </html>
