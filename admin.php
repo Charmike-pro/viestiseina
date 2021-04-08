@@ -12,6 +12,7 @@
 <th>ID:</th>
 <th>Lähettäjä:</th>
 <th>Viesti:</th>
+<th>Päivämäärä:</th>
 <th>Piilotettu:</th>
 </tr>
 <?php
@@ -26,7 +27,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 // output data of each row
 while($row = $result->fetch_assoc()) {
-echo "<tr><td>". $row["id"]."</td><td>".$row["sender"]. "</td><td>". $row["msg"]."</td><td>".$row["hide"] ."</td></tr>";
+echo "<tr><td>". $row["id"]."</td><td>".$row["sender"]. "</td><td>". $row["msg"]."</td><td>".$row["date"]."</td><td>".$row["hide"] ."</td></tr>";
 }
 echo "</table> <br>";
 }
