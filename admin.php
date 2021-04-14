@@ -28,16 +28,28 @@ $conn = mysqli_connect("localhost", "root", "", "testi");
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
-/// Displays all database input
+
 $sql = "SELECT * FROM rad";
 $result = $conn->query($sql);
-if ($result->num_rows > 0) {
-// output data of each row
-while($row = $result->fetch_assoc()) {
-echo "<tr><td>". $row["id"]."</td><td>".$row["sender"]. "</td><td>". $row["msg"]."</td><td>".$row["date"]."</td><td>".$row["hide"] ."</td></tr>";
-}
-echo "</table> <br>";
-}
+?>
+<?php if ($result->num_rows > 0): ?>
+
+<?php while($row = $result->fetch_assoc()): ?>
+<tr>
+<td><?php echo $row["id"]; ?></td>
+<td><?php echo $row["sender"]; ?></td>
+<td><?php echo $row["msg"]; ?></td>
+<td><?php echo $row["date"]; ?></td>
+<?php if($row["hide"] == 1): ?>
+<td><a href="show.php?id=<?php echo $row["id"]; ?>">Näytä</a></td>
+<?php else: ?>
+    <td><a href="hide.php?id=<?php echo $row["id"]; ?>">Piilota</a></td>
+</tr>
+<?php endif; ?>
+
+<?php endwhile; ?>
+
+<?php endif;
 $conn->close();
 ?>
 </table>
