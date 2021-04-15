@@ -1,3 +1,12 @@
+<html>
+<body onload="lol()">
+<h1>Etusivu aukeaa pian...</h1>
+    <script>
+        var timer = setTimeout(function() {
+            window.location='index.php'
+        }, 3000);
+</script>
+</html>
 <?php
 
 function is_valid_user($email, $password){
@@ -16,3 +25,4 @@ function is_valid_user($email, $password){
     }
     return false;
 }
+?>
