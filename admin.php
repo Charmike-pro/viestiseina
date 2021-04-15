@@ -6,6 +6,7 @@ if(!isset($_SESSION['logged_in'])){
 }
 ?>
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +15,7 @@ if(!isset($_SESSION['logged_in'])){
 </head>
 <body>
 <a href="logout.php">Kirjaudu ulos</a>
-<table>
+<table class="jumbotron text-center">
 <tr>
 <th>ID:</th>
 <th>Lähettäjä:</th>
