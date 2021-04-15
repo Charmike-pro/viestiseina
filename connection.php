@@ -9,9 +9,9 @@
 </html>
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "testi";
+$username = "pynnonen.pyry";
+$password = "PyrynK4nt4!";
+$dbname = "pynnonen.pyry";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

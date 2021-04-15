@@ -24,7 +24,7 @@ if(!isset($_SESSION['logged_in'])){
 <th>Piilotettu:</th>
 </tr>
 <?php
-$conn = mysqli_connect("localhost", "root", "", "testi");
+$conn = mysqli_connect("localhost", "pynnonen.pyry", "PyrynK4nt4!", "pynnonen.pyry");
 // Check connection
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
